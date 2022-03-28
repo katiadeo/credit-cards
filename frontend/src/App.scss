@@ -1,0 +1,202 @@
+@import "~antd/dist/antd.css";
+@import "./assets/css/mixins.scss";
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Work+Sans);
+
+body {
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    background-color: rgb(57, 67, 80);
+    position: relative;
+
+    &::after {
+        content: "";
+        background: url("./assets/images/mountains.jpg") no-repeat center/cover
+            fixed;
+        filter: blur(8px);
+        -webkit-filter: blur(8px);
+        opacity: 0.6;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 150px 64px 20px;
+    height: 100%;
+
+    @include lg {
+        padding: 100px 40px 20px;
+    }
+
+    @include md {
+        padding: 100px 48px 20px;
+    }
+
+    @include s {
+        padding: 100px 24px 20px;
+    }
+}
+
+.formWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    padding: 20px;
+
+    .nav {
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+    }
+}
+
+.formContainer {
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+    padding: 100px 30px 20px;
+    background-color: rgba(8, 30, 39, 0.788);
+    box-shadow: 0 0 15px 5px rgba(15, 36, 44, 0.3);
+    border-radius: 2px;
+}
+
+.cardTitle {
+    position: absolute;
+    top: 3%;
+    left: -5%;
+    max-width: 500px;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #2bd4e086;
+    box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.4),
+        inset 2px 2px 10px 2px rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+
+    @include s {
+        height: 10%;
+        font-size: 14px;
+    }
+}
+
+.tableWrapper {
+    overflow-x: auto;
+    box-shadow: 0 0 15px 5px rgba(15, 36, 44, 0.3);
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* BUTTONS */
+.deleteBtn,
+.addBtn,
+.recordsBtn {
+    border: none;
+    background: transparent;
+    color: #f3f3f3;
+
+    &:hover {
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.24);
+        transform: scale(1.05);
+    }
+}
+
+.deleteBtn {
+    &:hover,
+    &:focus {
+        background-color: rgba(167, 0, 0, 0.938) !important;
+        color: #ffffff;
+    }
+}
+
+.addBtn,
+.recordsBtn {
+    &:hover,
+    &:focus {
+        background-color: #fff348ef !important;
+        color: #0f0f0f;
+    }
+
+    &:active {
+        background-color: #fff348ef !important;
+    }
+}
+
+/* Rewritten antd styles */
+input.ant-input {
+    color: #79c8fdb7;
+}
+
+input {
+    background-color: transparent !important;
+}
+
+// .rccs__card--unknown > div {
+// 	background: rgba(55, 117, 133, 0.541) !important;
+// }
+
+.ant-input-affix-wrapper {
+    background-color: transparent !important;
+    border: 1px solid rgba(248, 248, 248, 0.2);
+
+    &:hover,
+    &:focus {
+        outline: none;
+        box-shadow: unset !important;
+        border: 1px solid rgba(157, 255, 242, 0.3) !important;
+    }
+}
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: #79c8fdb7;
+    background: transparent !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.ant-table {
+    background: transparent;
+    font-size: 20px;
+}
+
+.ant-table-placeholder:hover > td,
+.ant-table-row:hover > td {
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.ant-table-thead > tr > th {
+    background-color: rgba(17, 37, 49, 0.473);
+    color: rgba(219, 219, 219, 0.938);
+}
