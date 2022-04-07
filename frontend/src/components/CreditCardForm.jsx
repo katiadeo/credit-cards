@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Form, Input, Button, Row, Col } from "antd";
 import { useNavigate } from "react-router";
+import { message } from "antd";
 
 const CreditCardForm = () => {
     const [form] = Form.useForm();
     const [disabledSave, setDisabledSave] = useState(true);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        message.warning("Do not enter you real data here");
+    }, [form]);
 
     const validateExpiry = (e) => {
         let MM = e.target.value.replace(/[^0-9]/g, "").substring(0, 2);
